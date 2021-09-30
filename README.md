@@ -23,4 +23,5 @@
    Создать репозиторий и запустить командную строку.
    - gh repo clone KrasnovNikitaDev/input_types
    - cd .\input_types\
-   - npm i run start
+   - npm i 
+   - npm run start
