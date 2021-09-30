@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import  InputPage  from "./route/InputPage.js";
+import  Mockup  from "./route/Mockup"
+import { CSSTransition } from 'react-transition-group'
 
-function App() {
+
+const routes = [
+  {path: "/", name: "InputPage", Component: InputPage},
+  {path: "/mockup", name: "Mockup", Component: Mockup},
+]
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  <Router>
+    {/* <Switch> */}
+      {routes.map(({path, Component}) => (
+        <Route exact path = {path} key={path}>
+            {({ match}) => (
+              <CSSTransition
+                in={match != null}
+                timeout={300}
+                classNames="page"
+                unmountOnExit
+              >
+                <div className="page">
+                  <Component />
+                </div>
+              </CSSTransition>
+            )}
+        </Route>
+        ))
+      }
+    {/* </Switch> */}
+  </Router> 
+)}
 
-export default App;
+

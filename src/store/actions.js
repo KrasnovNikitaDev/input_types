@@ -1,0 +1,6 @@
+export const name =(data) => ({type: 'ACTION-NAME', value: data}) 
+export const phoneNumber =(data) => ({type: 'ACTION-PHONE-NUMBER', value: data}) 
+export const mail =(data) => ({type: 'ACTION-MAIL', value: data}) 
+export const ip =(data) => ({type: 'ACTION-IP', value: data}) 
+export const nickname =(data) => ({type: 'ACTION-USER-NICKMANE', value: data}) 
+export const typeError =(data) => ({type: 'ACTION-TYPE-ERROR', value: data}) 
