@@ -85,11 +85,9 @@ function chekIP(arr){
 /* ======================= Проверка на почту =======================*/
 function chekMail(arr){
     if( arr[0] === 64 ) return false;
-
-    for( let i = 0; i < arr.length; i++){
-        if( arr[i] === 64 || arr[i] === 46 || arr[i] !== 32) continue;
-        else return false;
-    }
+    if(arr.includes(32)) return false;
+    if(!arr.includes(64)) return false;
+    if(!arr.includes(46)) return false;
 
     return true;
 }
