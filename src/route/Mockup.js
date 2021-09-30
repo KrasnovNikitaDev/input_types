@@ -28,13 +28,13 @@ const MockCard = () => {
                     <Typography 
                         gutterBottom variant="h6" 
                         component="div">
-                            Input type : { state.stringType }
+                            Тип : { state.stringType }
                     </Typography>
                     <Typography 
                         // gutterBottom variant="h5" 
                         variant="body1" 
                         color="text.secondary">
-                            Input value : { state.data }
+                            Значение : { state.data }
                     </Typography>
                 </CardContent>
             </CardActionArea>

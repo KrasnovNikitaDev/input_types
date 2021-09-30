@@ -15,7 +15,7 @@ const reducer = (state = dafultState, action) => {
         case 'ACTION-NAME': 
             return {...state, 
                 data: action.value, 
-                stringType: 'Name'
+                stringType: 'Имя Фамилия'
             };
         case 'ACTION-PHONE-NUMBER':
             console.log();
@@ -24,27 +24,27 @@ const reducer = (state = dafultState, action) => {
                 .filter(elem => (
                     elem !== ' ' && elem !== '-' && elem !== '(' && elem !== ')')
                 ).join(''),
-                stringType: 'Phone number'
+                stringType: 'Номер телефона'
             };
         case 'ACTION-MAIL': 
             return {...state, 
                 data: action.value, 
-                stringType: 'Email'
+                stringType: 'Почта'
             };
         case 'ACTION-IP': 
             return {...state, 
                 data: action.value, 
-                stringType: 'IP address'
+                stringType: 'IP адрес'
             };
         case 'ACTION-USER-NICKMANE': 
             return {...state, 
                 data: action.value, 
-                stringType: 'Nickname'
+                stringType: 'Имя пользователя'
             };
         case 'ACTION-TYPE-ERROR': 
             return {...state, 
                 data: '',
-                stringType: 'Error, type undefined'
+                stringType: 'Ошибка, тип не опознан.'
             };
         case 'CLEAR-STORE': 
             return {

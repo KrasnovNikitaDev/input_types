@@ -1,6 +1,6 @@
 
 export function handleInputValue(array, dispatch){
-    let russiaChar = chekussinChar(array);
+    let cyrillicChar = chekCyrillicCharChar(array);
     let nameEn = chekName(array, 65, 90, 97, 122);
     let nameRus = chekName(array, 1040, 1071, 1072, 1103);
     let IP = chekIP(array);
@@ -23,7 +23,7 @@ export function handleInputValue(array, dispatch){
         dispatch({type:'ACTION-SET-NICKNAME', value: array});
     }
     else if( IP ) dispatch({type:'ACTION-SET-IP', value: array});
-    else if(mail && !russiaChar) dispatch({type:'ACTION-SET-MAIL', value: array});
+    else if(mail && !cyrillicChar) dispatch({type:'ACTION-SET-MAIL', value: array});
 
     else dispatch({type:'ACTION-SET-TYPE-ERROR'});
 }
@@ -31,7 +31,7 @@ export function handleInputValue(array, dispatch){
 
 /* ======================= Проверка на кириллицу =======================*/
 
-function chekussinChar(arr){
+function chekCyrillicCharChar(arr){
     for (let i = 0; i < arr.length; i++){
         if(arr[i]>= 1040 && arr[i] <= 1103) return true;
     }

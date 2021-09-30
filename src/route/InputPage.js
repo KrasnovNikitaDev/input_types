@@ -34,7 +34,7 @@ const InputPage = () => {
             onChange={eventChange}
             id="standard-basic" 
             label={
-                store.stringType && input ? store.stringType : "Input text"
+                store.stringType && input ? store.stringType : "Введите текст"
             } 
             variant="standard"  
             inputRef={input}
@@ -46,7 +46,7 @@ const InputPage = () => {
             variant="contained" 
             color="primary" 
             component={RouterLink} to="/mockup">
-          search
+          Поиск
         </Button>
         </StyledForm>
     </StyledInputPage>
